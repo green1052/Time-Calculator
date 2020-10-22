@@ -1,56 +1,58 @@
+
+
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-          name="viewport">
-    <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="https://icon-icons.com/downloadimage.php?id=30001&root=272/ICO/512/&file=Calculator_30001.ico">
-    <title>날짜 계산기</title>
-    <style>
-        * {
-            font-family: "Noto Sans KR", sans-serif;
-        }
-    </style>
-    <script src="https://momentjs.com/downloads/moment.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        function calc() {
-            document.getElementById("years").value = null;
-            document.getElementById("months").value = null;
-            document.getElementById("days").value = null;
-
-            const documentDate = document.getElementById("date").value;
-            const documentDate2 = document.getElementById("date2").value;
-
-            if (!documentDate || !documentDate2) return;
-
-            const date = moment(documentDate);
-            const date2 = moment(documentDate2);
-
-            const duration = moment.duration(date2.diff(date));
-
-            document.getElementById("years").value = duration.years();
-            document.getElementById("months").value = duration.months();
-            document.getElementById("days").value = duration.days();
-        }
-    </script>
-</head>
-<body>
-<div style="text-align: center;">
-    <h2>날짜 계산기</h2>
-    <h4>
-        간단한 날짜 계산기는 뭔가요?
-        <br>
-        입력 창에 날짜를 입력하면 해당 날짜로부터 며칠이 지났는지 구해주는 계산기입니다.
-    </h4>
-    <input id="date" onchange="calc()" type="date">
-    <br>
-    <input id="date2" onchange="calc()" type="date">
-    <br>
-    연 차이: <input disabled id="years" size="5" style="text-align:center;" type="text">
-    월 차이: <input disabled id="months" size="5" style="text-align:center;" type="text">
-    일 차이: <input disabled id="days" size="6" style="text-align:center;" type="text">
-</div>
-</body>
+   <head>
+      <meta charset="UTF-8">
+      <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+         name="viewport">
+      <meta content="ie=edge" http-equiv="X-UA-Compatible">
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+      <link rel="shortcut icon" href="https://icon-icons.com/downloadimage.php?id=30001&root=272/ICO/512/&file=Calculator_30001.ico">
+      <title>날짜 계산기</title>
+      <style>
+         * {
+         font-family: "Noto Sans KR", sans-serif;
+         }
+      </style>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" type="text/javascript"></script>
+      <script type="text/javascript">
+         function calc() {
+             document.getElementById("years").value = null;
+             document.getElementById("months").value = null;
+             document.getElementById("days").value = null;
+         
+             const documentDate = document.getElementById("date").value;
+             const documentDate2 = document.getElementById("date2").value;
+         
+             if (!documentDate || !documentDate2) return;
+         
+             const date = moment(documentDate);
+             const date2 = moment(documentDate2);
+         
+             const duration = moment.duration(date2.diff(date));
+         
+             document.getElementById("years").value = duration.years();
+             document.getElementById("months").value = duration.months();
+             document.getElementById("days").value = duration.days();
+         }
+      </script>
+   </head>
+   <body>
+      <div style="text-align: center;">
+         <h2>날짜 계산기</h2>
+         <h4>
+            간단한 날짜 계산기는 뭔가요?
+            <br>
+            입력 창에 날짜를 입력하면 해당 날짜로부터 며칠이 지났는지 구해주는 계산기입니다.
+         </h4>
+         <input id="date" onchange="calc()" type="date">
+         <br>
+         <input id="date2" onchange="calc()" type="date">
+         <br>
+         연 차이: <input disabled id="years" size="5" style="text-align:center;" type="text">
+         월 차이: <input disabled id="months" size="5" style="text-align:center;" type="text">
+         일 차이: <input disabled id="days" size="6" style="text-align:center;" type="text">
+      </div>
+   </body>
 </html>
